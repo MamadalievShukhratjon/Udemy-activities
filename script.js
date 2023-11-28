@@ -38,4 +38,7 @@ var height = prompt("What is your weight?")
 
 
 alert(whole)
+
+
+
         
