@@ -5,10 +5,11 @@ var friendship = Math.random() * 100 ;
 
 friendship = Math.floor(friendship)+ 1;
 
-if (frienship > 100) {
-    alert("Your friendship dcore is " + frienship + "% you are best friends")
+if (friendship >= 100) {
+    
+    alert("Your friendship score is " + frienship + "% you are best friends")
 } else {
-        alert("Your friendship dcore is " + frienship + "% ")
+        alert("Your friendship score is " + friendship + "% ")
 }
 
 alert("Your friendship is " + friendship + "%")
@@ -27,7 +28,8 @@ var height = prompt("What is your weight?")
     if (whole < 18.5) {
         console.log("Your BMI is " + bmi + "so you are underweight")
         
-    console.log("your BMI is " + whole + " You are normal weight" )
+    // } if else (whole =< 18.5 && whole = 24.9) {
+    //     console.log("your BMI is " + whole + " You are normal weight" )
     
     } else {
         console.log('Your BMI is ' + whole + " You are overweiht")
@@ -36,9 +38,7 @@ var height = prompt("What is your weight?")
     return whole;
 }
 
-
-alert(whole)
-
+getBMI()
 
 
         
