@@ -31,4 +31,4 @@ let animal = 'cat'
 let msg = '     Leave Me Alone    '
 console.log(msg.toUpperCase())
 console.log(msg.toLowerCase())
-console.log(msg.trim())
+console.log(msg.trim()) // this is used to remove the spaces.
