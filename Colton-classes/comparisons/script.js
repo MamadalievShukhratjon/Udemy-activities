@@ -103,3 +103,61 @@ if ( false, 0, null, undefined, NaN) {
     console.log("falsy");
 }
 
+
+
+// Logical Operators. Combining Expressions.
+
+//  && - (and) - Both thing must be true for the entire thing to be true.
+
+const password1 = prompt("Enter your password")
+
+if (password1.length() >= 6 && password1.indexOf(" ") === -1) {
+    console.log("Valid password");
+}else {
+    console.log("Invalid password");
+}
+
+// || (pipe character) or - if one side is true, the entire thing is true
+
+const age1 = 24;
+
+if (age < 5 || age >= 65) {
+    console.log("Free");
+}else if (age < 10 ) {
+    console.log("$10");
+}else if (age < 65) {
+    console.log("$20");
+}else {
+    console.log("Invalid age");
+}
+
+// Logical NOT (!)
+
+//  ! expression returns true if expression is false. if it is false, it returns true.
+
+let firstName = prompt("Enter your name")
+if (!firstName) { // if not first name?
+    firstName = prompt("try again")
+}
+
+if (!age1 >= 0 && age < 5 || age >= 65) {
+    console.log("You are not a baby or senior!");
+}
+
+
+// SWITCH / CASE
+
+// Switch statement is another control-flow statement that can replace multiple if statements
+
+const day1 = 2
+
+switch(day) {
+    case 1: console.log("Monday"); break ;
+    case 2: console.log("Tuesday"); break ;
+    case 3: console.log("Wednesday"); break ;
+    case 4: console.log("Thursday"); break ;
+    case 5: console.log("Friday"); break ;
+    case 6: console.log("Saturday"); break ;
+    case 7: console.log("Sunday"); break ;
+    default: console.log("Not weekdays");
+}
