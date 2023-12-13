@@ -161,3 +161,5 @@ switch(day) {
     case 7: console.log("Sunday"); break ;
     default: console.log("Not weekdays");
 }
+
+//  JAVASCRIPT ARRAYS
