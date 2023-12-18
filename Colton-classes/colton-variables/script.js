@@ -107,3 +107,43 @@ console.log(Math.floor(Math.random() * 10) + 1) // shorter version of code above
 
 // Math.pow() - static method returns the value of a base raised to a power tha is Math.pow(x,y)
 console.log(Math.pow(2,7))
+
+//  else if is used when the first thing is not true.
+
+const day = "Monday"
+
+if (day === "Monday") {
+    console.log("I hate Modays");
+}else if (day === 'Sunday') {
+    console.log("That's a grat day");
+}else if (day === 'Friday') {
+    console.log("That's a grat day");
+}else if (day === ' Tuesdayy') {
+    console.log("That's a grat day");}
+
+    // else -> if nothing is true then do this.
+
+    const day1 = prompt("enter a day").toLowerCase()
+     
+    if (day1 === "Sunday" ){
+        console.log("that's a great day");
+    }else if (day === "monday") {
+        console.log('very normal day');
+    }else {
+        console.log('working day');
+    }
+
+    // Nesting -> we can nest conditionals inside conditionals.
+
+    const password = prompt("Please ender your password")
+    if (password.length >= 6) { // if length of password is equal to 6 or bigger than it
+        if (password.indexOf("") === -1 ) {
+            console.log('valid password');
+        }else {
+            console.log("password cannot contain spaces");
+        }
+    }else {
+        console.log("password too short! Must be 6+ characters");
+    }
+
+
