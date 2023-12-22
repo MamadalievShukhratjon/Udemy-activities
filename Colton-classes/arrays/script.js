@@ -40,3 +40,42 @@
     let array1 = ['hello', 'salom']
     let array2 = ['world', 'dunyo']
     let array3 = [array1 + array2]
+
+    const str = "LOL"
+
+    for (let i = 0; i<=4; i++) {
+        console.log('Outer', i);
+        for (let j = 0; j< str.length; j++) {
+            console.log("   Inner", str[j]);
+        }
+    }
+
+    // includes() -> determines wheather an arrayaincludes a certain value among its entries, returning true or false as appropriate.
+
+    let arrays1 = ['kitty', 'chikky']
+
+    arrays1.includes('kitty')
+
+    // indexOf() -> returns the first index at which a given elements can be found in the array or if it is not in the arrays, it will return -1.
+
+    array1.indexOf('kitty')
+
+    // reverse() -> reverses an array in place. the first array element becomes the last and the last bemoces the first like reversed.
+
+    let cats = ['kitty', 'chunky', 'boby']
+    cats.reverse()
+    // if we have 2 elements with the same name, it only returns the first element at index.
+
+    // slice() -> returns a shallow a copy of a portion od array into a new array object selected from start to end (end not included).
+
+    // splice() -> changes contents of an array by removing or replacing existing elements and adding new elements in place.
+
+    // sort() -> sorts elements of an array in place and returns the reference to the same arrays.
+
+    // NESTED ARRAYS -> we can store arrays inside other arrays.
+
+    const gameBoard = [['X', 'O', 'X'], ['O', 'Null', 'X'], ['O', 'O', 'X']]
+
+    // to access elements in nested array.
+
+    gameBoard[1][1] //->
