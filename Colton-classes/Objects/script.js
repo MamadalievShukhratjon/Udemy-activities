@@ -48,4 +48,6 @@
 
     person ['fist' + 'name'] // --> shukhrat
 
+    person ['last' + 'name']
+
     
