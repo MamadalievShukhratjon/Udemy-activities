@@ -49,5 +49,18 @@
     person ['fist' + 'name'] // --> shukhrat
 
     person ['last' + 'name']
+    const restaurant =  {
+        name: 'Ichron Ramon',
+        address: `${Math.floor(Math.random() * 100) +1} avenue`,
+        city: 'brooklyn',
+        state: 'NY',
+        zipcode: 11206
+    }
 
+    const fulladdress = `${restaurant.address}, ${restaurant.city}, ${restaurant.state} ${restaurant.zipcode}`
+
+    //   Modifying Objects
+     const midterms = {danielle: 96, thomas: 78,}
+     midterms.thomas = 80.
+     midterms[danielle] = "A"
     
