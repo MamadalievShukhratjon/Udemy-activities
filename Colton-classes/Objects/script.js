@@ -63,4 +63,14 @@
      const midterms = {danielle: 96, thomas: 78,}
      midterms.thomas = 80.
      midterms[danielle] = "A"
+
+     // Adding Elements.
+
+     midterms.lack = 'B+'
+     midterms.joey = 'A'
+
+
+     // Nesting arrays and Objects
+
+     
     
