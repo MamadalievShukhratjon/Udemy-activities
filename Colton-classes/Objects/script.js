@@ -68,7 +68,7 @@
 
      midterms.lack = 'B+'
      midterms.joey = 'A'
-
+     midterms.jimmiy = 'B+'
 
      // Nesting arrays and Objects
 
