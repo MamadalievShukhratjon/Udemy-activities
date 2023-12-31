@@ -70,6 +70,8 @@
      midterms.joey = 'A'
      midterms.jimmiy = 'B+'
      midterms.jony = 'C+'
+     midterms.alex = "B-"
+     
 
      // Nesting arrays and Objects
 
