@@ -74,5 +74,13 @@
 
      // Nesting arrays and Objects
 
+     const comments = [
+        {username: 'Bolakay_717', text: 'Hello World', votes: 78}
+     ]
+
+    //  Accessing data out of nested arrays
+
+    comments[0].text // --> hello world
+
      
     
