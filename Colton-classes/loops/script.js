@@ -87,3 +87,10 @@ for (let i = 0; i< seatingcharts.length; i++) {
     for (let j = 0; j < row.length; j++)
     console.log(row[j]);
 }
+
+// While loop continue running as long as test condition is true
+ let num = 0
+ while(num <= 10) {
+    console.log(num);
+    num++
+ }
