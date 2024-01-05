@@ -312,6 +312,200 @@ function isBetween(num) {
         console.log(`${this.name} says MEOW`);
     }
  }
-
  cat2.meow()
+
+ // Value of "THIS" depends on the invocation context of function it is used in.
+
+ // task
+ let hen = {
+    name: 'Helen',
+    eggCount: 0,
+    layAnEgg () {
+        this.layAnEgg++
+        return "EGG"
+    }
+ }
+
+ // TRY and CATCH statement in JS
+
+ try {
+    hello.toUpperCase()
+ }catch {
+    console.log('Error');
+ }
  
+ function yell(msg) {
+    try{
+        console.log(msg.toUpperCase());
+    }catch {
+        console.log(e);
+        console.log('Please pass a string next time!');
+    }
+ }
+
+ // Array Callback Methods
+
+// The forEach() methid of array executes a provided function once for each array element in an arrat in ascending index-order.
+
+// The forEach() accepts a callback function. it calls the function once per element in the array.
+
+const nums = [9,8,7,6,5,4,3,2,1]
+
+nums.forEach(function (n) {
+    console.log(n *n );
+})
+
+nums.forEach(function (el){
+    if(el % 2 === 0) {
+        console.log(el);
+    }  // output should be [8,6,4,2]
+})
+
+const numbers = [1,2,3,4,5,6,7,8,9,10]
+
+function print(element) {
+    console.log(element);
+}
+
+numbers.forEach(print)
+
+numbers.forEach(function (el) {
+    console.log(el);
+})
+//           ==
+for (let el of numbers) {
+    console.log(el);
+}
+
+numbers.forEach(function (el){
+    if (el % 2 === 2) {
+        console.log(`Even number iss: ${el}`);
+    }
+})
+
+const movies = [
+    {
+        title:'Amandeus',
+        score: 99
+    },
+    {
+        title: 'Stand By Me',
+        score: 85
+    },
+    {
+        title:'Parasite', 
+        score: 95
+    }, 
+    {
+        title: 'Aliens',
+        score: 90
+    }
+]
+
+movies.forEach(function (movie) {
+    console.log(`${movie.title}-${movie.score}/100`);
+})
+
+//  MAP
+
+// MAP creates a new array with the result of coding a callback on every element in the array.
+
+const texts = ['rofl', 'lol', 'omg', 'ttyl'];
+const caps = texts.map(function (t){
+    return t.toUpperCase()
+})
+
+const numbers1 = [1,2,3,4,5]
+
+const multiplication = numbers1.map(function (num){
+    return num * 2
+})
+
+
+const movies1 = [
+    {
+        title:'Amandeus',
+        score: 99
+    },
+    {
+        title: 'Stand By Me',
+        score: 85
+    },
+    {
+        title:'Parasite', 
+        score: 95
+    }, 
+    {
+        title: 'Aliens',
+        score: 90
+    }
+]
+
+const title = movies1.map(function(movie) {
+    return movie.title.toUpperCase()
+})
+
+const fullNames = [{first: 'Albus', last: 'Dummbeldor'}, {first: 'Harry', last: 'Potter'}, {first:'Hermione', last: 'Granger'},
+{fist:'Ron', last: 'Weasly'}]
+
+const firstNames = fullNames.map(function(first){
+    return first.first
+})
+
+// Arrow Function
+// Arrow function is compact alternatrive to a traditional function expression, with some semantic differences and delibrate limitations in usage.
+
+// it is syntacticly compact alternative to a regular function expression.
+
+const square2 = (x) => {
+    return x * x
+}
+ square(3)
+
+ const sum1 = (x,y) => {
+    return x + y
+ }
+
+
+ // function expression 
+ const add = function(x,y) {
+    return x + y
+ }
+
+ // arrow function
+ const add = (x,y) => {
+    return x +y
+ }
+
+ const rollDie = () => {
+    return Math.floor(Math.random() * 6) + 1
+}
+
+// task
+
+const greet = (name) => {
+    return `Hey ${name}!`
+}
+greet('Shukhrat')
+
+
+// Implicit Return
+
+// To make Implicit return, we have to change  { } curly braces with () perentisis
+
+// arrow return
+const rollDie = () => {
+    return Math.floor(Math.random() * 6) + 1
+}
+
+
+// Implicit Return
+const rollDie = () => (
+     Math.floor(Math.random() * 6) + 1
+)
+
+// shorter version
+
+const add = (a,b) = a + b
+
+// Implicit return works only when there is one clear value as a return
