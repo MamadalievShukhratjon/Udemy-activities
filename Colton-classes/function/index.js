@@ -507,5 +507,6 @@ const rollDie = () => (
 // shorter version
 
 const add = (a,b) = a + b
+const adv = (num1, num2) = num1 + num2
 
 // Implicit return works only when there is one clear value as a return
