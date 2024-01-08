@@ -468,22 +468,22 @@ const square2 = (x) => {
 
 
  // function expression 
- const add = function(x,y) {
+ const qoshish = function(x,y) {
     return x + y
  }
 
  // arrow function
- const add = (x,y) => {
+ const add1 = (x,y) => {
     return x +y
  }
 
- const rollDie = () => {
+ const rollDie2 = () => {
     return Math.floor(Math.random() * 6) + 1
 }
 
 // task
 
-const greet = (name) => {
+const greet1 = (name) => {
     return `Hey ${name}!`
 }
 greet('Shukhrat')
@@ -494,19 +494,107 @@ greet('Shukhrat')
 // To make Implicit return, we have to change  { } curly braces with () perentisis
 
 // arrow return
-const rollDie = () => {
+const rollDie1 = () => {
     return Math.floor(Math.random() * 6) + 1
 }
 
 
 // Implicit Return
-const rollDie = () => (
+const rollDie3 = () => (
      Math.floor(Math.random() * 6) + 1
 )
 
 // shorter version
 
-const add = (a,b) = a + b
-const adv = (num1, num2) = num1 + num2
+// const addd = (b , d) = a + b
+// const adv = (a , b) = num1 + num2
 
 // Implicit return works only when there is one clear value as a return
+
+// ARROW function wrap-up
+
+const movies2 = [
+    {
+        title:'Amandeus',
+        score: 99
+    },
+    {
+        title: 'Stand By Me',
+        score: 85
+    },
+    {
+        title:'Parasite', 
+        score: 95
+    }, 
+    {
+        title: 'Aliens',
+        score: 90
+    }
+]
+
+const newMovies = movies2.map( function (movie ) {
+    return `${movie.title}- ${movie.score}/100`
+})
+
+const arrMovies = movies2.map(movie => (
+    `${movie.title}=${movie.score}/100`
+))
+
+// one line 
+const arrMovies2 = movies.map(movie => `${movie.title} - ${movie.score}/100`)
+
+//  setTimeout and setinterval
+
+// setTimeout is JS function that schechules a single execution of a function after a specified delay, measured in milliseconds, 
+// as it is commonly used to create a delay brfore executig a piece of code or function. It includes two piece; 1st handler, 2nd timeout.
+
+setTimeout( () =>  {
+    console.log('Hello!!!');
+}, 3000) // Hello!!! -> runs immidiately after waiting 3 seconds
+console.log('Hello!!'); // runs immidiately
+
+// setIntervals() - method offered on the windowa and work global scope, interfaces, 
+// repeatedly calls a function or executes acode snippit with fixed time delay between eaach call.
+
+// setInterval(() => {
+//     console.log(Math.floor(Math.random() *6) + 1);
+// }, 2000);
+
+// const id = setInterval(() => {
+//     console.log('helloworld'*2);
+// }, 3000) // to stop this process, write clear interval(id)  in console.
+
+// Filter method
+
+// It creates a new array with all elements that pass the test implemented by the provided function.
+
+const raqam = [9,8,7,6,5,4,3,2,1]
+
+const juft = raqam.filter(n => {
+    return n % 2 === 0
+})
+
+// out callback function returns true or false. If it returns true, n is added to the filtered array
+
+const raqamlar = [1,2,3,4,5,6,7,8,9]
+raqamlar.filter( n=> {
+    return n < 8
+}) // output --> [1,2,3,4,5,6,7]
+
+
+
+const goodMovies1 = movies.filter(movie => {
+    return movie.score> 80
+})
+
+const goodMovies2 = movies.filter( m => m.score > 80)
+const badMovies = movies.filter ( m => m.score < 70)
+const recentMovies = movies.filter(m => m.year > 2015)
+
+const titles = movies.filter( m => m.title)
+
+// filter task
+
+function validUseNames(arr) {
+    return arr.filter(name => name.length < 10)
+}
