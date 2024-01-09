@@ -635,11 +635,23 @@ const words = ['dog', 'dig', 'log', 'bag', 'wag']
 
  words.some(w=> w.includes('cake')) // ture because of cupcake.
 
- function allEvens(numbers) {
-    return numbers.every(each => each % 2 ===0)
- }
+//  const raqamlar1 = [1,2,3,4,5,6,7]
+//  function allEvens(raqamlar1) {
+//      const raqameach = raqamlar1.every(each => each % 2 ===0)
+//         return  raqameach
 
- allEvens()
+//     }
+        // if (Array.isArray(raqamlar1)) {
+//     // Now use the every() method
+//     const allEven = raqamlar1.every(each => each % 2 === 0);
+//     return allEven;
+// } else {
+//     // Handle cases where raqamlar1 is not an array
+//     return false; // or handle it in a way suitable for your code
+// }
+
+
+//  allEvens(1,2,4,5,6,7)
 
  movies.some(movie => movie.year > 2015) // give me the movies produced after 2015
 
@@ -652,9 +664,9 @@ const words = ['dog', 'dig', 'log', 'bag', 'wag']
 const prices = [9.99, 1.60, 19.99, 49.99,30.50] 
 let totalPrices = 0;
 for (let price of prices) {
-     total += price
+     totalPrices += price
 }
-console.log(total)
+console.log(totalPrices)
 
 // Reduce method
 const total = prices.reduce((total, price) => {
@@ -665,7 +677,7 @@ const total1 = prices.reduce((total,  price) => total + price)
 // Getting minimum element price
 
 const totalP = prices.reduce((total,price) =>  {
-    const minPrice = prices.refuce((min,price) => {
+    const minPrice = prices.reduce((min,price) => {
         if(price + min ) {
             return price
         }
@@ -682,4 +694,202 @@ const highestRated = movies.reduce ((bestMovie,currentMovie) => {
 
 // We can add second argument as a default value
 const evens = [2,4,6,8]
-evens.reduce((sum,num) => sum + num, 100 ) // 100 is default value.   
+evens.reduce((sum,num) => sum + num, 100 ) // 100 is secod parametr as a default value.
+
+// Default parametr // the old way
+// Default Function Parameter allow named parameters to be initialized with default values if no value or undefined passed.
+
+function multiply(a,b) {
+    b = typeof b !== 'undefined' ? b : 1;
+    return a * b
+}
+multiply(7,3) //21
+
+
+// The new way // 
+
+function multiply2(a,b =1) {
+    return a * b
+}
+multiply2(4) // 4 
+multiply2(4,5) // 20
+
+function hello(numsides=6) {
+    return Math.floor(Math.random() * numsides) + 1
+}
+hello() // we will get numbers from 1 to 6 as we have 6 as a default value
+hello(10) // we will get numbers from 1 to 10 since we inputed 10 as parameter.
+
+// in this kind of situations, order stronly matters
+
+function greet(person,msg = 'Hey there') {
+    return `${msg} ${person}`
+}
+greet('Shukhrat') // output would be  'Hey there, Shukhrat
+
+function greet(person,msg = 'Hey there,', punc = '!') {
+    return `${msg}, ${person}, ${punc}`
+}
+
+greet('Shukhrat') // -> "Hey there, Shukhrat! "
+
+// Spread in Function calls
+
+// Spread syntax allow an iterable such as an array to be expanded in places where zero or more arguments (for function calls) or elements (for array literals)  
+// are expected, or an object expression to be expanded in pllaces where zero or more key-value pairs (for object literals) aree expected.
+
+// Math.max  -> gives the highest number between given numbers
+
+Math.max(1,2,3,4,5,6,7,8) // -> 7
+// Math.min  -> gives the lowest number in the given numbers
+Math.min(2,3,45,6,1,8,9) // 1
+
+// They can except any numbers but, it should be seperae arguments, otherwise it would be NaN
+const maxnum = [13,17,23,48,50,95,110]
+
+console.log(Math.max) // we will get NaN as output
+// IIn  this case, we're not actually calling the Math.max function with any arguments. 
+// When you use Math.max without passing arguments, it doesn't perform any comparison among numbers because it's not being invoked as a function.
+
+// To change this variable array to separate arguments, we have to use "SPREAD" method
+// we can define it by ... / 3 dots before the given variable
+
+
+console.log(Math.max(...maxnum)); // 110 should be output
+console.log(Math.min(...maxnum)); // 13 should be output
+console.log(...'hello'); // h e l l o should be output
+
+// Spread with array literals 
+
+// we can add two arrays with each other and make them seperate arguments with 'SPREAD' method
+
+const cats = ['blue', 'scout', 'rocket']
+const dogs = ['rusty', 'wyat']
+
+const allPets = [...cats, ...dogs]
+
+console.log(allPets);
+
+// Spread with objects 
+// spread in object literals copies properties from one object int another object literals.
+// when two or more objects have the same name, the last one will be winner
+
+const feline = {leg: 4, familiy: 'Feline'}
+const canine = {isfurry: true, familiy:'Canine'}
+
+const catDog = {...feline, ...canine}
+console.log(catDog)
+
+//  if we try to change array to object, in spread method, wew will get result with index numbers.
+console.log({...[1,2,3,4,5,6]});
+console.log({..."Hello"});
+
+// SPREAD in Array literals
+// Create a new array using existing array. Spreads the element from one into a new array.
+
+// Rest parameter 
+// The arguments object are available inside every function. It is an array-like object which has a length property and it does nothae array methods like push and pop.
+// It contains all the arguments passed to a function. It is not available inside arrow function.
+// rest parametr collecs all remaning argumrnts into an actual array.
+
+function sumAll(...nums) {
+    let total = 0;
+    for (let n of nums) {
+        return total
+    }
+}
+
+function sums(...sums) {
+    return nums.reduce((total,el) => total + el)
+}
+sums(1,2,3) // output should be 6
+
+function raceResults(gold,silver, ...everyoneElse) {
+    console.log(`Gold medal goes to: ${gold}`);
+    console.log(`Silver medal goes to: ${silver}`);
+    console.log(`And thanks to everyone else: ${everyoneElse}`);
+}
+
+raceResults('Ali', 'Shukhrat', 'Vali', 'Salim')
+
+// destructuring from Array
+
+// A short, clean, syntax to unpack valuesfrom arrays and peoperties from objects into distinck variables
+
+const scores = [92,89,88, 77,66,55,44,33,22]
+
+// to make every argument a singile variable, we use a method below:
+
+const [gold, silver, bronze, ...everyoneElse] = scores
+console.log(scores);
+
+// Destructuring from Objects
+// Normal Object
+
+const user = {
+    email: 'bolakay717@gmail',
+    password: '******',
+    firstname: 'Shukhrat',
+    lastName: 'Mamadaliev',
+    born: 2000,
+    city: 'Namangan'
+ }
+ const {email,fistname, lastName, city} = user
+ // To change the current variable name to new variable name:
+  const {email:userEmail, born:birthyear, city:state} = user
+// if we don't give a value for a property, we can put default value:
+ const user2 = {
+    firstName: 'Stacy',
+    lastName: 'Gonzalez',
+    city: 'tulsa',
+    born: 1987,
+ }
+
+ const {born:birthYear, died: daethYear = "N/A"} = user2
+ console.log(user2);
+
+ function fullName(user2) {
+    const {firstName, lastName} = user
+    return `${firstName}, ${lastName}`
+ }
+
+ function fullName2({firstName,lastName}) {
+    return `${firstName, lastName}`
+ }
+
+ fullName({ firstNames, lastName:'Mamadaliev'})
+
+ const movies7 = [
+    {
+        title:'Amandeus',
+        score: 99,
+        year: 1897
+    },
+    {
+        title: 'Stand By Me',
+        score: 85,
+        year: 1999
+    },
+    {
+        title:'Parasite', 
+        score: 95,
+        year: 2012
+    }, 
+    {
+        title: 'Aliens',
+        score: 90,
+        year: 1987
+    }
+]
+
+
+ movies7.map(movie => {
+    console.log( `${movie.title}(${movie.year}), is rated ${movie.score}`)
+ })
+
+ // shorter 
+ movies7.map(({title, score, year}) => {
+    console.log(`${title},(${year}) is rated ${score}`);
+ })
+
+
