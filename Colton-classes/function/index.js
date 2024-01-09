@@ -598,3 +598,88 @@ const titles = movies.filter( m => m.title)
 function validUseNames(arr) {
     return arr.filter(name => name.length < 10)
 }
+
+//  every && some 
+
+// EVERY - method tests weather all elements in the array pass the test function implemented by provided function. it returns Boolean value
+const words = ['dog', 'dig', 'log', 'bag', 'wag']
+ words.every(word => {
+    return word.length === 3
+ })  // true
+
+ words.every(word => word[0] === 'd') // false since only 2 words starts with letter d
+ words.every(w => {
+    let last_letter = w[w.length-1];
+    return last_letter === 'g'
+ }) // true
+
+ const exams = [80,98,92,78,70,90]
+
+ exams.every(score => score >= 75) // --> 1 element less than 75 that is wht it is false.
+
+ exams.every(score => score >= 70) // it is true
+
+
+ // SOME - mthod tests weather at least one element in the array passes the test implemented by the function. it returns true ,
+ // in te array, it finds an element for which the provided function returns true, otherwise it returns false, it doesn't modify array.
+
+ // SOME - is very similar to EVERY, but return true if any of array elements pass the test function
+
+ const words1 = ['dog', 'jello', 'log', 'cupcake', 'bag']
+
+ words1.some(word => {
+    return word.length > 4
+ }) // true because we have 2 words with more letters than 4
+
+ words.some(word => word[0] === 'Z')// false, we don't have anyletter with Z
+
+ words.some(w=> w.includes('cake')) // ture because of cupcake.
+
+ function allEvens(numbers) {
+    return numbers.every(each => each % 2 ===0)
+ }
+
+ allEvens()
+
+ movies.some(movie => movie.year > 2015) // give me the movies produced after 2015
+
+ // REDUCE - method executes a reducer functoin on each element of the array, resulting in a single value.
+
+ const reducedNums = [2,5,7,9,11].reduce((num1, currentValue) => {
+    return num1 + currentValue
+ })
+ // Normal way
+const prices = [9.99, 1.60, 19.99, 49.99,30.50] 
+let totalPrices = 0;
+for (let price of prices) {
+     total += price
+}
+console.log(total)
+
+// Reduce method
+const total = prices.reduce((total, price) => {
+    return total + price
+})
+const total1 = prices.reduce((total,  price) => total + price)
+
+// Getting minimum element price
+
+const totalP = prices.reduce((total,price) =>  {
+    const minPrice = prices.refuce((min,price) => {
+        if(price + min ) {
+            return price
+        }
+        return price
+    }) 
+})
+
+const highestRated = movies.reduce ((bestMovie,currentMovie) => {
+    if (currentMovie.score > bestMovie.score) {
+        return currentMovie
+    }
+    return bestMovie
+})
+
+// We can add second argument as a default value
+const evens = [2,4,6,8]
+evens.reduce((sum,num) => sum + num, 100 ) // 100 is default value.   
