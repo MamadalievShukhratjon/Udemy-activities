@@ -17,3 +17,4 @@
  
 const banner = documnet.getElementByI('silkie')
 console.log(banner);
+console.dir(banner);
