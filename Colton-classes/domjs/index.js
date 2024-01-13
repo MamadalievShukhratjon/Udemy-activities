@@ -79,3 +79,15 @@ for (let i= 0; i < spans.length; i++) {
     
     spans[i].style.color = colors[i]
 }
+// Select and Manipulate
+// InnerText -> 
+document.querySelector('p').innerText
+
+// textConntent shows all elements, texts, hidden texts on the console.
+ document.querySelector('p').textContent
+
+ // innerHTML -> gets or sets hTMl markup contained withi the element, when we call a whole paragraph or anything with
+ // with innerHTML, ew will get eveerything(tags, attributes etc...) in the content.
+
+ document.querySelector('p').innerHTML
+ document.querySelector('span').innerHTML = 'Disgusting'
